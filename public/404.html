@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — VELOX NEXUS</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+  :root{color-scheme:dark}
+  *{box-sizing:border-box}
+  body{
+    margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:#0b0c0a;color:#eef0e6;
+    font-family:'DM Sans',system-ui,-apple-system,sans-serif;
+  }
+  .card{
+    max-width:440px;width:100%;padding:36px 30px;text-align:center;
+    border:1px solid #23271d;border-radius:20px;
+    background:linear-gradient(180deg,#12140f,#0e100c);
+    box-shadow:0 40px 90px -40px rgba(0,0,0,.85);
+  }
+  .mark{width:44px;height:44px;margin:0 auto 20px;display:grid;place-items:center;border-radius:12px;background:#1e2811;border:1px solid #333a2a;color:#d8ff7a;font-size:26px;line-height:1}
+  h1{font-family:'Space Grotesk',sans-serif;font-size:26px;letter-spacing:-1px;margin:0 0 10px;font-weight:500}
+  p{margin:0 0 22px;font-size:13px;line-height:1.75;color:#8d9386}
+  code{font-family:ui-monospace,monospace;font-size:11px;color:#d8ff7a;background:#181b13;padding:2px 6px;border-radius:4px}
+  a{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:9px;background:#d8ff7a;color:#131d03;text-decoration:none;font-size:13px;font-weight:600}
+  a:hover{background:#b6e84f}
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="mark" aria-hidden="true">↯</div>
+    <h1>Halaman ini tidak ada.</h1>
+    <p>Alamat <code id="path">/</code> tidak dikenal oleh VELOX NEXUS. Ruang kerjanya cuma tiga: Downloader, Push, dan Repo.</p>
+    <a href="/">Kembali ke workspace</a>
+  </main>
+  <script>
+    // Display only — the path is inserted as text, never as markup.
+    document.getElementById('path').textContent = location.pathname.slice(0, 120);
+  </script>
+</body>
+</html>

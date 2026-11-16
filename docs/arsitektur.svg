@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" role="img" aria-label="Alur VELOX NEXUS: browser, server resolvers, GitHub">
+  <style>
+    .bg{fill:#0b0c0a}
+    .box{fill:#12140f;stroke:#23271d;stroke-width:1}
+    .box-a{fill:#1e2811;stroke:#3d5124;stroke-width:1}
+    .lbl{fill:#eef0e6;font-family:'Space Grotesk',system-ui,sans-serif;font-size:13px;font-weight:500}
+    .sub{fill:#8d9386;font-family:'DM Sans',system-ui,sans-serif;font-size:10.5px}
+    .mono{fill:#d8ff7a;font-family:ui-monospace,monospace;font-size:9.5px;letter-spacing:.6px}
+    .line{stroke:#333a2a;stroke-width:1;fill:none}
+    .dash{stroke:#4a5535;stroke-width:1;fill:none;stroke-dasharray:4 4}
+    .cap{fill:#666c60;font-family:'DM Sans',system-ui,sans-serif;font-size:9px;letter-spacing:1.6px}
+  </style>
+  <rect class="bg" width="980" height="430"/>
+  <text class="cap" x="40" y="34">VELOX NEXUS / ARSITEKTUR 3.0</text>
+
+  <!-- browser -->
+  <rect class="box" x="40" y="70" width="240" height="290" rx="14"/>
+  <text class="lbl" x="62" y="98">Browser</text>
+  <text class="sub" x="62" y="116">Tanpa build step, tanpa CDN</text>
+
+  <rect class="box" x="60" y="134" width="200" height="52" rx="9"/>
+  <text class="lbl" x="76" y="156">Downloader</text>
+  <text class="sub" x="76" y="172">paste → resolve → stream</text>
+
+  <rect class="box" x="60" y="196" width="200" height="52" rx="9"/>
+  <text class="lbl" x="76" y="218">Push</text>
+  <text class="sub" x="76" y="234">token → ZIP/folder → repo</text>
+
+  <rect class="box" x="60" y="258" width="200" height="52" rx="9"/>
+  <text class="lbl" x="76" y="280">Repo manager</text>
+  <text class="sub" x="76" y="296">baca, buka, hapus</text>
+
+  <text class="mono" x="62" y="336">CSP: script-src 'self'</text>
+  <text class="mono" x="62" y="350">token → sessionStorage</text>
+
+  <!-- server -->
+  <rect class="box" x="340" y="70" width="290" height="290" rx="14"/>
+  <text class="lbl" x="362" y="98">Express server</text>
+  <text class="sub" x="362" y="116">Railway / Docker, non-root</text>
+
+  <rect class="box-a" x="360" y="134" width="250" height="46" rx="9"/>
+  <text class="lbl" x="376" y="153">/api/resolve</text>
+  <text class="sub" x="376" y="169">deteksi platform → rantai resolver</text>
+
+  <rect class="box" x="360" y="190" width="250" height="46" rx="9"/>
+  <text class="lbl" x="376" y="209">/api/dl</text>
+  <text class="sub" x="376" y="225">proxy CDN + merge ffmpeg</text>
+
+  <rect class="box" x="360" y="246" width="250" height="46" rx="9"/>
+  <text class="lbl" x="376" y="265">/api/health · capabilities</text>
+  <text class="sub" x="376" y="281">status engine, routing, limit</text>
+
+  <text class="mono" x="362" y="318">rate limit per IP</text>
+  <text class="mono" x="362" y="332">anti-SSRF: allowlist + DNS</text>
+  <text class="mono" x="362" y="346">tanpa cookie, tanpa token</text>
+
+  <!-- github -->
+  <rect class="box" x="690" y="70" width="250" height="290" rx="14"/>
+  <text class="lbl" x="712" y="98">GitHub</text>
+  <text class="sub" x="712" y="116">langsung dari browser</text>
+  <text class="mono" x="712" y="150">POST /user/repos</text>
+  <text class="mono" x="712" y="172">POST /git/blobs</text>
+  <text class="mono" x="712" y="194">POST /git/trees</text>
+  <text class="mono" x="712" y="216">POST /git/commits</text>
+  <text class="mono" x="712" y="238">PATCH /git/refs</text>
+  <text class="sub" x="712" y="272">Blob → tree → commit → ref</text>
+  <text class="sub" x="712" y="290">tanpa server perantara</text>
+
+  <!-- links -->
+  <path class="line" d="M260 160 L360 157" marker-end="url(#ar)"/>
+  <path class="line" d="M260 212 L360 213"/>
+  <path class="line" d="M260 284 L360 269"/>
+  <path class="line" d="M610 157 C660 130 660 160 690 172" marker-end="url(#ar)"/>
+  <path class="dash" d="M160 248 C300 400 620 410 700 300"/>
+  <text class="sub" x="360" y="404">jalur token: browser → api.github.com (tidak lewat server)</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#4a5535"/>
+    </marker>
+  </defs>
+</svg>

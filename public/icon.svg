@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="VELOX NEXUS">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6ff9b"/>
+      <stop offset="1" stop-color="#b6e84f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0d0f0c"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="#333a2a"/>
+  <path d="M36 11 20 36h10.5L28 53l16-25H33.5L36 11Z" fill="url(#g)"/>
+  <circle cx="48" cy="17" r="2.6" fill="#b6e84f"/>
+</svg>
